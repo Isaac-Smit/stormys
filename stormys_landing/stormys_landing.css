@@ -141,6 +141,7 @@ body::before {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
     color: #B18743;
     font-size: 16px;
     font-weight: bold;
@@ -149,20 +150,22 @@ body::before {
 
 .title-part1 {
     display: flex;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-left: 10px;
 }
 
 .title-divider {
     display: flex;
     width: 100%;
     margin: 0 auto;
-    border-top: 0.15px solid #F4EDEB; 
+    border-top: 0.10px solid #F4EDEB;
 }
 
 .title-part2 {
-    display:flex;
-    letter-spacing: 9px;
-    margin-left: 5px;
+    display: flex;
+    letter-spacing: 12.70px;
+    margin-left: 9px;
 }
 
 .additional-text {
@@ -211,6 +214,34 @@ body::before {
     letter-spacing: 3px;
 }
 
+
+
+/*Pricing Section*/
+
+
+.pricing-title-container {
+    margin-top: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #B18743;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 12px;
+    color: #C4AE78;
+}
+.pricing-title {
+    margin-left: 14px;
+}
+
+.pricing-underline {
+    display: flex;
+    width: 100%;
+    border-top: 0.10px solid #F4EDEB;
+}
+
+
 .pricing-section {
     display: flex;
     flex-direction: column;
@@ -218,8 +249,41 @@ body::before {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70vh;
+    height: 50%;
 }
+
+.pricing-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #171515;
+    color:#B18743;
+    width: 80%;
+    height: 70%;
+    padding-top: 180px;
+    padding-bottom: 180px;
+    margin: 30px;
+}
+
+.pricing-container li {
+    list-style-type: none;
+}
+
+.cuts {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: #F4EDEB;
+    letter-spacing: 4px;
+}
+
 
 @media (max-width: 768px) {
     .navbar {
