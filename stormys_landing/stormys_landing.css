@@ -79,6 +79,7 @@ body::before {
 
 .logo-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 1px solid green;
@@ -96,10 +97,20 @@ body::before {
     transition: ease 0.5s;
 }
 
-
+.appointment-card-wrapper{
+    display: flex;
+    background: url('stormys_landing_pictures/stormys_waiting.jpeg');
+    background-size: cover;
+    height: 70%;
+    width: 80%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
 
 .content-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     border: 1px purple solid;
     align-items: center;
@@ -107,19 +118,12 @@ body::before {
     width: 100%;
 }
 
-.interior-image {
-    position: relative;
-    width: 100%;
-    max-width: 80vw;
-    max-height: 110vh;
-    height: auto;
-}
-
 .appointment-card {
-    position: absolute;
+    margin: 170px;
+    position: relative;
     top: 50;
     left: 50;
-    width: 60%;
+    width: 80%;
     height: 55%;
     background-color: rgba(26, 24, 24, 0.848); /* Semi-transparent black */
     color: white;
@@ -144,19 +148,19 @@ body::before {
 }
 
 .title-part1 {
-    display: block;
+    display: flex;
     letter-spacing: 2px;
 }
 
 .title-divider {
-    display: block;
+    display: flex;
     width: 100%;
     margin: 0 auto;
     border-top: 0.15px solid #F4EDEB; 
 }
 
 .title-part2 {
-    display: block;
+    display:flex;
     letter-spacing: 9px;
     margin-left: 5px;
 }
@@ -171,10 +175,11 @@ body::before {
 
 .hours-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 20px; /* Space between sections */
     width: 100%;
     max-width: 600px;
+    margin-bottom: 40px;
 }
 
 .days, .times {
@@ -196,16 +201,19 @@ body::before {
     font-size: 18px;
     margin: 5px 0; /* Space between each entry */
     color: #B18743; /* Gold color */
+    letter-spacing: 3px;
 }
 
 .hour {
     font-size: 18px;
     margin: 5px 0; /* Space between each entry */
     color: #F4EDEB;
+    letter-spacing: 3px;
 }
 
 .pricing-section {
     display: flex;
+    flex-direction: column;
     position: relative;
     align-items: center;
     justify-content: center;
