@@ -13,14 +13,17 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('stormys_landing_pictures/background.png') top center no-repeat; /* Ensure the top of the image is at the top of the page */
-    background-size: cover; /* Adjust as needed */
+    background: url('stormys_landing_pictures/background_rotated.png') top center repeat; /* Ensure the top of the image is at the top of the page */
+    background-size: contain; /* Adjust as needed */
     background-attachment: scroll;
-    transform: rotate(90degrees); 
+    /* transform: rotate(90deg);  */
     opacity: 0.4;
     z-index: -1;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 .navbar {
     display: flex;
@@ -28,7 +31,7 @@ body::before {
     align-items: center;
     background-color: #1f232c;
     padding: 10px 20px;
-    height: 100px;
+    height: 7vh;
     position: fixed;
     top: 0;
     width: 100%;
@@ -40,41 +43,92 @@ body::before {
     list-style: none;
     display: flex;
     margin: 0;
-    padding: 0;
+    padding-left: 25px;
     flex: 1;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0 25px;
 }
 
 .navbar ul li a {
     color: #B18743;
-    text-decoration: none;
+    text-decoration: none; /* Remove the default underline */
     font-weight: bold;
     font-size: 16px;
     letter-spacing: 3.5px;
+    position: relative; /* Allows for precise positioning of the pseudo-element */
+    transition: color 0.5s ease; /* Smooth transition for color change */
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%; /* Start from the center */
+    right: 50%; /* Start from the center */
+    bottom: -3px; /* Distance from the text */
+    height: 1px; /* Thickness of the underline */
+    background-color: #F4EDEB; /* Color of the underline */
+    transition: left 0.5s ease, right 0.5s ease; /* Smooth expansion */
+    transform: scaleX(1); /* Start hidden */
+    transform-origin: center; /* Ensures the transform starts from the center */
+}
+
+.navbar ul li a:hover {
+    color: #F4EDEB; /* Color change on hover (red in this example) */
+}
+
+.navbar ul li a:hover::after {
+    left: 0; /* Expand the underline to the left */
+    right: 0; /* Expand the underline to the right */
+    transform: scaleX(1.2); /* Expand the underline */
+}
+
+.navbar ul li a::after {
+    left: 50%; /* Retract the underline back to the center */
+    right: 50%; /* Retract the underline back to the center */
 }
 
 .navbar .location {
     display: flex;
     align-items: center;
-    color: #F4EDEB;
+    color: #B18743;
     letter-spacing: 3px;
     margin-left: auto;
     font-size: 12px;
     font-weight: 350;
-    padding-right: 40px;
+    padding-right: 80px;
+    height: 40px;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.map-link {
+    text-decoration: none !important;
+    color: inherit;
+    display: flex;
+    align-items: center;
 }
 
 .navbar .location img {
     margin-right: 10px;
-    height: 30px;
+    height: 40px;
+    transition: filter 0.5s ease;
 }
 
 .navbar .location-text span {
-    display: block;
+    display: flex;
+}
+
+
+.navbar .location:hover {
+    color: #F4EDEB; /* New text color on hover */
+}
+
+.navbar .location:hover img {
+    filter: brightness(0) invert(1); /* Changes image color to match the hover effect */
 }
 
 .logo-container {
@@ -83,7 +137,6 @@ body::before {
     justify-content: center;
     align-items: center;
     border: 1px solid green;
-    z-index: 12;
     width: 100%;
     height: 100vh;
     position: relative;
@@ -223,7 +276,7 @@ body::before {
 
 
 .pricing-title-container {
-    margin-top: 400px;
+    width: 15%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -292,15 +345,15 @@ body::before {
 
 .page-break{
     width: 100%;
-    height: 50vh;
+    height: 40vh;
 }
 
-.presentation-container{
+.presentation-container {
     display: flex;
     flex-direction: column;
     position: relative;
     width: 100%;
-    
+
 }
 
 .picture-right{
@@ -327,17 +380,42 @@ body::before {
 
 /* carousel reviews */
 
+.review-title-container {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #B18743;
+    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 12px;
+    color: #C4AE78;
+    margin-bottom: 20px;
+}
+
+.review-title {
+    margin-left: 14px;
+}
+
+.review-underline {
+    display: flex;
+    width: 100%;
+    border-top: 0.10px solid #F4EDEB;
+}
+
 .carousel-container {
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 85vh;
+    height: 80vh;
     width: 50%;
     max-width: 1200px;
     max-height: 800px;
     margin: auto;
     /* overflow: hidden; */
     background-color: #171515;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .carousel {
@@ -352,7 +430,7 @@ body::before {
 }
 
 .carousel-image-container {
-    height: 100%;
+    height: 94%;
     width: 50%;
     display: flex;
     background-size:0 50%;
@@ -400,6 +478,8 @@ body::before {
     cursor: pointer;
     border-radius: 50%;
     font-size: 1.5rem;
+    transition: background-color 0.5s ease, color 0.5s ease,transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .prev {
@@ -410,6 +490,163 @@ body::before {
     right: 25%;
 }
 
+.prev:hover, .next:hover {
+    background-color: #1F232C; /* Change background color on hover */
+    color: #F4EDEB; /* Change text color on hover */
+}
+
+.prev:active, .next:active {
+    transform: translateY(-50%) scale(0.7); /* Slightly scale down on click */
+    background-color: #F4EDEB; /* Darker background color on click */
+    color: #1F232C; /* Change text color to white on click */
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease; /* Fast transition for the click effect */
+}
+
+.footer {
+    height: 45vh;
+    width: 100%;
+    background-color: #171515;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-title-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 10vh;
+}
+
+.hours-title-container {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #C4AE78;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 8px;
+}
+
+.inquiries-title-container {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: #C4AE78;
+}
+
+.inquiries-title {
+    font-size: 22px;
+}
+
+.inquiries-underline {
+    display: flex;
+    width: 70%;
+    border-top: 0.10px solid #F4EDEB;   
+}
+
+.hours-title {
+    font-size: 22px;
+}
+
+.hours-underline {
+    display: flex;
+    width: 100%;
+    border-top: 0.10px solid #F4EDEB;
+}
+
+.footer-content-container {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.hours-container-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Space between sections */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.inquiries-container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left;
+    margin-top: 20px; /* Space between sections */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.inquire-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 70%;
+}
+
+.email {
+    color: #B18743;
+}
+.address {
+    color: #F4EDEB;
+}
+.appointment-status {
+    color: #C4AE78;
+}
+.inquire {
+    color:#B18743;
+}
+.phone {
+    color: #B18743;
+}
+.number {
+    color: #F4EDEB;
+}
+
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50%;
+}
+
+.google-maps-icon img{
+    height: 50px;
+}
+.facebook-icon img{
+    height: 50px;
+}
+.instagram-icon img{
+    height: 50px
+}
 
 
 @media (max-width: 768px) {

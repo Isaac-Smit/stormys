@@ -15,18 +15,24 @@
     <header>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Home</a></li>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Pricing">Pricing</a></li>
+                <li><a href="#Reviews">Reviews</a></li>
+                <li><a href="#About">About</a></li>
             </ul>
-            <div class="location">
-                <img src="stormys_landing_pictures/page_icons/google_maps/google-maps-50.png" alt="Location Icon">
-                <div class="location-text">
-                    <span>69 Montgomery Square, Nelson.</span>
-                    <span>Near Penguinos & Robert Harris 7010</span>
+            <a href="https://shorturl.at/dL17p" target="_blank" rel="noopener noreferrer" class="map-link">
+                <div class="location">
+                    <img src="stormys_landing_pictures/page_icons/google_maps/google-maps-50.png" alt="Location Icon">
+                    <div class="location-text">
+                        <span>69 Montgomery Square, Nelson.</span>
+                        <span>Near Penguinos & Robert Harris 7010</span>
+                    </div>
                 </div>
-            </div>
+            </a>
         </nav>
+
+        <section id="Home"></section>
+
     </header>
 
     <div class="logo-container">
@@ -72,13 +78,19 @@
         </div>
     </div>
 
+    <div class ="page-break"><section id="Pricing"></section></div>
+    
     <div class="pricing-title-container">
+        
         <span class="pricing-title">Pricing</span>
         <span class="pricing-underline"></span>
+        
     </div>
-
+    
     <div class="pricing-section">
+        
         <div class="pricing-container">
+            
             <div class="cuts">
                 <ul>
                     <li class="cut">Standard Cut:</li>
@@ -110,7 +122,16 @@
         <div class ="picture-left"></div>
     </div>
 
-    <div class ="page-break"></div>
+    <div class ="page-break">
+        <section id="Reviews"></section>
+    </div>
+
+    
+
+    <div class="review-title-container">
+        <span class="review-title">Reviews</span>
+        <span class="review-underline"></span>
+    </div>
 
     <div class="carousel-container">
         <div class="carousel">
@@ -138,6 +159,71 @@
         <button class="next" onclick="moveClick(1)">&#10095;</button>
     </div>
     <div class ="page-break"></div>
+
+    <div class="footer">
+
+
+        <div class="footer-title-container">
+        <div class="hours-title-container">
+            <span class="hours-title">Business Hours</span>
+            <span class="hours-underline"></span>
+        </div>
+
+        <div class="inquiries-title-container">
+            <span class="inquiries-title">Inquiries</span>
+            <span class="inquiries-underline"></span>
+        </div>
+        </div>
+
+
+
+        <div class="footer-content-container">
+
+        <div class="hours-container-footer">
+            <div class="days">
+                <ol>
+                    <li class="day">Sunday:</li>
+                    <li class="day">Monday:</li>
+                    <li class="day">Tuesday:</li>
+                    <li class="day">Wednesday:</li>
+                    <li class="day">Thursday:</li>
+                    <li class="day">Friday:</li>
+                    <li class="day">Saturday:</li>
+                </ol>
+            </div>
+            <div class="times">
+                <ol>
+                    <li class="hour">CLOSED</li>
+                    <li class="hour">CLOSED</li>
+                    <li class="hour">9:30AM - 5:30PM</li>
+                    <li class="hour">9:30AM - 5:30PM</li>
+                    <li class="hour">9:30AM - 6:30PM</li>
+                    <li class="hour">9:30AM - 5:30PM</li>
+                    <li class="hour">10AM - 2PM</li>
+                </ol>
+            </div>
+        </div>
+
+        <section id="About"></section>
+
+        <div class ="inquiries-container-footer">
+            <div class ="inquire-details">
+                <span class="email">Email: <span class="address"> Example@gmail.com</span></span>
+                <span class="appointment-status">No Appointments</span>
+                <span class="inquire">For other inquiries</span>
+            <span class="phone">Phone: <span class="number"> 027 337 8767</span></span>
+            </div>   
+            <div class="icon-container">
+                <div class="google-maps-icon"><img src="stormys_landing_pictures/page_icons/google_maps/google-maps-100.png"></div>
+                <div class="facebook-icon"><img src="stormys_landing_pictures/page_icons/facebook/facebook-100.png"></div>
+                <div class="instagram-icon"><img src="stormys_landing_pictures/page_icons/instagram/instagram-100.png"></div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
 
     <script src="stormys_landing.js"></script> <!-- Include JavaScript file -->
 </body>
