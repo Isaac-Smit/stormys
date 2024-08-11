@@ -39,3 +39,29 @@ let coursel = setInterval(() => {
     moveCarousel(1);
 }, animationSpeed);
 
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const targetImage = document.querySelector('.logo-container .logo');
+
+    // Function to check if the target image is in view
+    function checkVisibility() {
+        const rect = targetImage.getBoundingClientRect();
+        const inViewport = rect.top >= 0 && rect.left >= 0 &&
+                           rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                           rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+
+        if (inViewport) {
+            document.body.classList.remove('flip-icon');
+        } else {
+            document.body.classList.add('flip-icon');
+        }
+    }
+
+    // Check visibility on scroll and resize
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+
+    // Initial check
+    checkVisibility();
+});

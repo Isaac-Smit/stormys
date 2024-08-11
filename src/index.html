@@ -3,40 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="stormys_landing.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/stormys_landing.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
     <title>Stormy's Man Cave Barbershop</title>
 </head>
 <body>
+
+
     <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Pricing">Pricing</a></li>
-                <li><a href="#Reviews">Reviews</a></li>
-                <li><a href="#About">About</a></li>
-            </ul>
-            <a href="https://shorturl.at/dL17p" target="_blank" rel="noopener noreferrer" class="map-link">
-                <div class="location">
-                    <img src="stormys_landing_pictures/page_icons/google_maps/google-maps-50.png" alt="Location Icon">
-                    <div class="location-text">
-                        <span>69 Montgomery Square, Nelson.</span>
-                        <span>Near Penguinos & Robert Harris 7010</span>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand me-0" href="#">
+                    <img class="logo" src="assets/images/stormys_logo. PNG.png" alt="Stormy's Barber Shop Logo"> 
+                </a>
+              
+                <div class="navbar-location order-1">
+                    <a class="d-flex align-items-center" href="https://www.google.com/maps/place/Stormys+Man+Cave+Barbershop/@-41.2728546,173.2806119,17z/data=!3m1!4b1!4m6!3m5!1s0x6d3bed0fb7a6200d:0x6a03d829ab95c8d1!8m2!3d-41.2728546!4d173.2831868!16s%2Fg%2F11b6yf6qsp?entry=ttu" target="_blank">
+                        <img src="assets/images/page_icons/google_maps/google-maps-50.png" alt="Location Icon" class="me-2">
+                        
+                        <div class="location-text d-none d-lg-block">
+                            <span>69 Montgomery Square, Nelson.</span><br>
+                            <span>Near Penguinos & Robert Harris 7010</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse mt-5 mt-lg-0 order-5 order-lg-0" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#Reviews">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
                     </div>
                 </div>
-            </a>
-        </nav>
-
-        <section id="Home"></section>
-
+            </div>
+          </nav>
     </header>
 
     <div class="logo-container">
-        <img class="logo" src="stormys_landing_pictures/stormys_logo. PNG.png" alt="Stormy's Barber Shop Logo"> 
+        <img class="logo" src="assets/images/stormys_logo. PNG.png" alt="Stormy's Barber Shop Logo"> 
     </div>
     
     <div class="content-container">
@@ -137,30 +156,33 @@
         <div class="carousel">
             <div class="carousel-item active">
                 <div class="flex-container">
-                <div class="carousel-image-container" style="background-image:url(stormys_landing_pictures/carousel_images/carousel_image-_1.png)"></div>
+                <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image-_1.png)"></div>
 
                 <div class="review"><p>"This kingdom is truly the greatest in all the lands!" - Sir John</p></div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="flex-container">
-                    <div class="carousel-image-container" style="background-image:url(stormys_landing_pictures/carousel_images/carousel_image_2.png)"></div>
+                    <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image_2.png)"></div>
                     <div class= "review"><p>"I have never seen such wisdom and power in a ruler." - Lady Margaret</p></div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="flex-container">
-                    <div class="carousel-image-container" style="background-image:url(stormys_landing_pictures/carousel_images/carousel_image_3.png)"></div>
+                    <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image_3.png)"></div>
                     <div class= "review"><p>"The magic here is unmatched. Long live the King!" - Wizard Alistair</p></div>    
                 </div>
             </div>
         </div>
+        <div class="button-wrapper">
         <button class="prev" onclick="moveClick(-1)">&#10094;</button>
         <button class="next" onclick="moveClick(1)">&#10095;</button>
+        </div>
     </div>
+
     <div class ="page-break"></div>
 
-    <div class="footer">
+    <div class="footer w-100">
 
 
         <div class="footer-title-container">
@@ -214,9 +236,9 @@
             <span class="phone">Phone: <span class="number"> 027 337 8767</span></span>
             </div>   
             <div class="icon-container">
-                <div class="google-maps-icon"><img src="stormys_landing_pictures/page_icons/google_maps/google-maps-100.png"></div>
-                <div class="facebook-icon"><img src="stormys_landing_pictures/page_icons/facebook/facebook-100.png"></div>
-                <div class="instagram-icon"><img src="stormys_landing_pictures/page_icons/instagram/instagram-100.png"></div>
+                <div class="google-maps-icon"><img src="assets/images/page_icons/google_maps/google-maps-100.png"></div>
+                <div class="facebook-icon"><img src="assets/images/page_icons/facebook/facebook-100.png"></div>
+                <div class="instagram-icon"><img src="assets/images/page_icons/instagram/instagram-100.png"></div>
             </div>
 
         </div>
@@ -225,7 +247,8 @@
 
     </div>
 
-    <script src="stormys_landing.js"></script> <!-- Include JavaScript file -->
+
+    <script src="assets/js/stormys_landing.js"></script> <!-- Include JavaScript file -->
 </body>
 </html>
 

@@ -1,0 +1,145 @@
+.footer {
+    height: 45vh;
+    width: 100%;
+    background-color: #171515;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-title-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 10vh;
+}
+
+.hours-title-container {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #C4AE78;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 8px;
+}
+
+.inquiries-title-container {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: 28px;
+    letter-spacing: 8px;
+    color: #C4AE78;
+}
+
+.inquiries-title {
+    font-size: 22px;
+}
+
+.inquiries-underline {
+    display: flex;
+    width: 70%;
+    border-top: 0.10px solid #F4EDEB;   
+}
+
+.hours-title {
+    font-size: 22px;
+}
+
+.hours-underline {
+    display: flex;
+    width: 100%;
+    border-top: 0.10px solid #F4EDEB;
+}
+
+.footer-content-container {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.hours-container-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; /* Space between sections */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.inquiries-container-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: left;
+    margin-top: 20px; /* Space between sections */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.inquire-details {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 70%;
+}
+
+.email {
+    color: #B18743;
+}
+.address {
+    color: #F4EDEB;
+}
+.appointment-status {
+    color: #C4AE78;
+}
+.inquire {
+    color:#B18743;
+}
+.phone {
+    color: #B18743;
+}
+.number {
+    color: #F4EDEB;
+}
+
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50%;
+}
+
+.google-maps-icon img{
+    height: 50px;
+}
+.facebook-icon img{
+    height: 50px;
+}
+.instagram-icon img{
+    height: 50px
+}

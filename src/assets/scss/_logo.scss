@@ -1,0 +1,39 @@
+body {
+    
+    .navbar-brand .logo {
+        opacity: 0;
+    }
+
+    .logo-container .logo {
+        opacity: 1;
+    }
+
+    &.flip-icon {
+
+        .navbar-brand .logo {
+            opacity: 1;
+        }
+    
+        .logo-container .logo {
+            opacity: 0;
+        }
+    }
+
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    height: 290px; /* Ensure initial height is set */
+    position: relative;
+    width: auto;
+    transition: ease 0.5s;
+}

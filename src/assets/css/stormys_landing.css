@@ -1,0 +1,648 @@
+body {
+  margin: 0;
+  font-family: "Cinzel", sans-serif;
+  background-color: #1F232C;
+  color: #1F232C;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/images/background_rotated.png") top center repeat; /* Ensure the top of the image is at the top of the page */
+  background-size: contain; /* Adjust as needed */
+  background-attachment: scroll;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body .navbar-brand .logo {
+  opacity: 0;
+}
+body .logo-container .logo {
+  opacity: 1;
+}
+body.flip-icon .navbar-brand .logo {
+  opacity: 1;
+}
+body.flip-icon .logo-container .logo {
+  opacity: 0;
+}
+
+.navbar {
+  padding: 35px;
+  background-color: #1f232c;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+.navbar .navbar-toggler {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-color: red;
+  --bs-navbar-toggler-border-color: red;
+}
+.navbar .navbar-location a {
+  color: #B18743;
+  text-decoration: none !important;
+  transition: color 0.5s ease;
+  letter-spacing: 2.6px;
+  font-size: 15px;
+}
+.navbar .navbar-location img {
+  width: 56px;
+  transition: filter 0.5s ease;
+}
+.navbar .navbar-location a:hover {
+  color: #F4EDEB;
+  /* New text color on hover */
+}
+.navbar .navbar-location a:hover img {
+  filter: brightness(0) invert(1);
+  /* Changes image color to match the hover effect */
+}
+.navbar .location:hover {
+  color: #F4EDEB;
+  /* New text color on hover */
+}
+.navbar .navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar .navbar-brand img {
+  height: 115px;
+}
+.navbar .navbar-nav .nav-link {
+  color: #B18743;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 3.5px;
+  position: relative;
+  transition: color 0.5s ease;
+  padding-inline: 20px;
+}
+.navbar .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 4px;
+  height: 1px;
+  background-color: #F4EDEB;
+  transition: left 0.5s ease, right 0.5s ease;
+  transform: scaleX(1);
+  transform-origin: center;
+  left: 50%;
+  right: 50%;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #F4EDEB;
+}
+.navbar .navbar-nav .nav-link:hover::after {
+  left: 0;
+  right: 0;
+  transform: scaleX(0.8);
+}
+
+#location iframe {
+  aspect-ratio: 10/6;
+}
+
+body .navbar-brand .logo {
+  opacity: 0;
+}
+body .logo-container .logo {
+  opacity: 1;
+}
+body.flip-icon .navbar-brand .logo {
+  opacity: 1;
+}
+body.flip-icon .logo-container .logo {
+  opacity: 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.logo {
+  height: 290px; /* Ensure initial height is set */
+  position: relative;
+  width: auto;
+  transition: ease 0.5s;
+}
+
+.appointment-card-wrapper {
+  display: flex;
+  background: url("/assets/images/stormys_waiting.jpeg");
+  background-size: cover;
+  height: 70%;
+  width: 80%;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.appointment-card {
+  margin: 170px;
+  position: relative;
+  top: 50;
+  left: 50;
+  width: 80%;
+  height: 55%;
+  background-color: rgba(26, 24, 24, 0.848); /* Semi-transparent black */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(2px); /* Apply the blur effect */
+  -webkit-backdrop-filter: blur(2px); /* For Safari */
+  font-size: 24px;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: #B18743;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 60px;
+}
+
+.title-part1 {
+  display: flex;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-left: 10px;
+}
+
+.title-divider {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  border-top: 0.1px solid #F4EDEB;
+}
+
+.title-part2 {
+  display: flex;
+  letter-spacing: 12.7px;
+  margin-left: 9px;
+}
+
+.additional-text {
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: 6px;
+  color: #F4EDEB;
+  margin-top: 20px; /* Add space between title and additional text */
+}
+
+.hours-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px; /* Space between sections */
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.days, .times {
+  display: flex;
+  flex-direction: column;
+}
+
+.days ol {
+  padding-left: 20px; /* Indent the ordered list */
+  list-style-type: none; /* Remove default list styling */
+}
+
+.times ol {
+  padding-left: 20px; /* Indent the ordered list */
+  list-style-type: none; /* Remove default list styling */
+}
+
+.day {
+  font-size: 18px;
+  margin: 5px 0; /* Space between each entry */
+  color: #B18743; /* Gold color */
+  letter-spacing: 3px;
+}
+
+.hour {
+  font-size: 18px;
+  margin: 5px 0; /* Space between each entry */
+  color: #F4EDEB;
+  letter-spacing: 3px;
+}
+
+.pricing-title-container {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: #B18743;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 12px;
+  color: #C4AE78;
+}
+
+.pricing-title {
+  margin-left: 14px;
+}
+
+.pricing-underline {
+  display: flex;
+  width: 100%;
+  border-top: 0.1px solid #F4EDEB;
+}
+
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+}
+
+.pricing-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #171515;
+  color: #B18743;
+  width: 80%;
+  height: 70%;
+  padding-top: 180px;
+  padding-bottom: 180px;
+  margin: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-container li {
+  list-style-type: none;
+}
+
+.cuts {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #F4EDEB;
+  letter-spacing: 4px;
+}
+
+.page-break {
+  width: 100%;
+  height: 40vh;
+}
+
+.presentation-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.picture-right {
+  background: url(/assets/images/presentation_pics/presentation-pic-left.jpg);
+  background-size: cover;
+  display: flex;
+  align-self: flex-end;
+  height: 80vh;
+  width: 115vh;
+  margin-bottom: -350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.picture-left {
+  background: url(/assets/images/presentation_pics/presentation-pic-right.jpg);
+  background-size: cover;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: start;
+  height: 80vh;
+  width: 115vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.review-title-container {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: #B18743;
+  font-weight: bold;
+  font-size: 32px;
+  letter-spacing: 12px;
+  color: #C4AE78;
+  margin-bottom: 20px;
+}
+
+.review-title {
+  margin-left: 14px;
+}
+
+.review-underline {
+  display: flex;
+  width: 100%;
+  border-top: 0.1px solid #F4EDEB;
+}
+
+.carousel {
+  display: relative;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+  width: 50%;
+  max-width: 1200px;
+  max-height: 800px;
+  margin: auto;
+  background-color: #171515;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.flex-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+
+.carousel-image-container {
+  height: 88%;
+  width: 50%;
+  display: flex;
+  background-size: 0 50%;
+  background: no-repeat;
+  background-position-x: -70px;
+}
+
+.review {
+  flex-direction: column;
+  color: #F4EDEB;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  padding-left: 1.5rem;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.carousel-item {
+  height: 85vh;
+  position: relative;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.button-wrapper {
+  position: absolute; /* Position relative to the carousel container */
+  top: 100%;
+  width: 100%; /* Stretch across the width of the carousel */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.prev, .next {
+  position: absolute;
+  top: 100%;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  background-color: #F4EDEB;
+  color: #1F232C;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+  left: 13rem;
+}
+
+.next {
+  right: 13rem;
+}
+
+.prev:hover, .next:hover {
+  background-color: #1F232C; /* Change background color on hover */
+  color: #F4EDEB; /* Change text color on hover */
+}
+
+.prev:active, .next:active {
+  transform: translateY(-50%) scale(0.7); /* Slightly scale down on click */
+  background-color: #F4EDEB; /* Darker background color on click */
+  color: #1F232C; /* Change text color to white on click */
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease; /* Fast transition for the click effect */
+}
+
+.footer {
+  height: 45vh;
+  width: 100%;
+  background-color: #171515;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-title-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 10vh;
+}
+
+.hours-title-container {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: #C4AE78;
+  font-weight: normal;
+  font-size: 28px;
+  letter-spacing: 8px;
+}
+
+.inquiries-title-container {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-weight: normal;
+  font-size: 28px;
+  letter-spacing: 8px;
+  color: #C4AE78;
+}
+
+.inquiries-title {
+  font-size: 22px;
+}
+
+.inquiries-underline {
+  display: flex;
+  width: 70%;
+  border-top: 0.1px solid #F4EDEB;
+}
+
+.hours-title {
+  font-size: 22px;
+}
+
+.hours-underline {
+  display: flex;
+  width: 100%;
+  border-top: 0.1px solid #F4EDEB;
+}
+
+.footer-content-container {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.hours-container-footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* Space between sections */
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.inquiries-container-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  margin-top: 20px; /* Space between sections */
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.inquire-details {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 70%;
+}
+
+.email {
+  color: #B18743;
+}
+
+.address {
+  color: #F4EDEB;
+}
+
+.appointment-status {
+  color: #C4AE78;
+}
+
+.inquire {
+  color: #B18743;
+}
+
+.phone {
+  color: #B18743;
+}
+
+.number {
+  color: #F4EDEB;
+}
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 50%;
+}
+
+.google-maps-icon img {
+  height: 50px;
+}
+
+.facebook-icon img {
+  height: 50px;
+}
+
+.instagram-icon img {
+  height: 50px;
+}/*# sourceMappingURL=stormys_landing.css.map */

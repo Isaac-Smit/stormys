@@ -1,0 +1,115 @@
+.appointment-card-wrapper{
+    display: flex;
+    background: url('/assets/images/stormys_waiting.jpeg');
+    background-size: cover;
+    height: 70%;
+    width: 80%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.appointment-card {
+    margin: 170px;
+    position: relative;
+    top: 50;
+    left: 50;
+    width: 80%;
+    height: 55%;
+    background-color: rgba(26, 24, 24, 0.848); /* Semi-transparent black */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backdrop-filter: blur(2px); /* Apply the blur effect */
+    -webkit-backdrop-filter: blur(2px); /* For Safari */
+    font-size: 24px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: #B18743;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 60px;
+}
+
+.title-part1 {
+    display: flex;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.title-divider {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    border-top: 0.10px solid #F4EDEB;
+}
+
+.title-part2 {
+    display: flex;
+    letter-spacing: 12.70px;
+    margin-left: 9px;
+}
+
+.additional-text {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 6px;
+    color: #F4EDEB;
+    margin-top: 20px; /* Add space between title and additional text */
+}
+
+.hours-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px; /* Space between sections */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.days, .times {
+    display: flex;
+    flex-direction: column;
+}
+
+.days ol {
+    padding-left: 20px; /* Indent the ordered list */
+    list-style-type: none; /* Remove default list styling */
+}
+
+.times ol {
+    padding-left: 20px; /* Indent the ordered list */
+    list-style-type: none; /* Remove default list styling */
+}
+
+.day {
+    font-size: 18px;
+    margin: 5px 0; /* Space between each entry */
+    color: #B18743; /* Gold color */
+    letter-spacing: 3px;
+}
+
+.hour {
+    font-size: 18px;
+    margin: 5px 0; /* Space between each entry */
+    color: #F4EDEB;
+    letter-spacing: 3px;
+}
