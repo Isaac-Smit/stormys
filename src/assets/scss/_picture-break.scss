@@ -5,30 +5,74 @@
 
 .presentation-container {
     display: flex;
-    flex-direction: column;
-    position: relative;
+    flex-direction: row;
     width: 100%;
-
+    justify-content: space-between; /* Ensures pictures are aligned to the left and right */
+    margin-bottom: 2rem; /* Space below the container */
 }
 
-.picture-right{
-    background: url(/assets/images/presentation_pics/presentation-pic-left.jpg);
-    background-size: cover;
-    display: flex;
-    align-self: flex-end;
-    height: 80vh;
-    width: 115vh;
-    margin-bottom: -350px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.picture-left, .picture-right {
+    position: relative;
+    width: 100vw; /* Adjust width to be responsive based on viewport width */
 }
 
-.picture-left{
-    background: url(/assets/images/presentation_pics/presentation-pic-right.jpg);
-    background-size: cover;
-    display: flex;
-    align-self: flex-start;
-    flex-direction: start;
-    height: 80vh;
-    width: 115vh;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.picture-left {
+    z-index: 2; /* Ensure it appears on top */
+    margin-right: -5vw; /* Overlap to the right, using vw for responsiveness */
+    top: 25vh; /* Move the left picture down slightly, using vh for responsiveness */
+}
+
+.picture-right {
+    z-index: 1; /* Ensure it appears below the left picture */
+    margin-left: -5vw; /* Overlap to the left, using vw for responsiveness */
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Adjust how the image fits inside its container */
+    aspect-ratio: 16/9; /* Maintain the aspect ratio */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for effect */
+    display: block;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .picture-left, .picture-right {
+        width: 50vw; /* Increase the width for smaller screens */
+    }
+
+    .page-break {
+        height: 30vh;
+    }
+
+    .picture-left {
+        top: 5vh; /* Adjust the vertical position */
+    }
+
+    .picture-right {
+        margin-left: -3vw; /* Adjust overlap for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .presentation-container {
+        flex-direction: column; /* Stack the images vertically on very small screens */
+        align-items: center; /* Center align the images */
+    }
+
+    .page-break {
+        height: 30vh;
+    }
+
+
+    .picture-left, .picture-right {
+        width: 110vw; /* Make the images larger on small screens */
+        margin: 0; /* Remove overlap on small screens */
+        top: 0; /* Reset the top position */
+    }
+
+    .picture-right {
+        margin-top: 2rem; /* Add space between the stacked images */
+    }
 }

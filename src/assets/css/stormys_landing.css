@@ -18,6 +18,11 @@ body::before {
   opacity: 0.4;
   z-index: -1;
 }
+@media (max-width: 1000px) {
+  body {
+    position: absolute;
+  }
+}
 
 html {
   scroll-behavior: smooth;
@@ -47,9 +52,17 @@ body.flip-icon .logo-container .logo {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .navbar .navbar-toggler {
-  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  --bs-navbar-color: red;
-  --bs-navbar-toggler-border-color: red;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23B18743' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-color: #B18743;
+  width: 35px; /* Desired width of the toggler button */
+  height: 35px; /* Desired height of the toggler button */
+  padding: 0; /* Remove any padding that might affect the size */
+}
+.navbar .navbar-toggler-icon {
+  width: 100%;
+  height: 100%;
+  background-size: contain; /* Scale the background image to fit */
+  background-position: center; /* Center the background image */
 }
 .navbar .navbar-location a {
   color: #B18743;
@@ -61,6 +74,11 @@ body.flip-icon .logo-container .logo {
 .navbar .navbar-location img {
   width: 56px;
   transition: filter 0.5s ease;
+}
+@media (max-width: 568px) {
+  .navbar .navbar-location img {
+    width: 33px;
+  }
 }
 .navbar .navbar-location a:hover {
   color: #F4EDEB;
@@ -77,10 +95,16 @@ body.flip-icon .logo-container .logo {
 .navbar .navbar-brand {
   position: absolute;
   left: 50%;
+  top: 0%;
   transform: translateX(-50%);
 }
 .navbar .navbar-brand img {
   height: 115px;
+}
+@media (max-width: 576px) {
+  .navbar .navbar-brand img.logo {
+    height: 90px;
+  }
 }
 .navbar .navbar-nav .nav-link {
   color: #B18743;
@@ -113,6 +137,28 @@ body.flip-icon .logo-container .logo {
   left: 0;
   right: 0;
   transform: scaleX(0.8);
+}
+@media (max-width: 1000px) {
+  .navbar .navbar-nav .nav-link::after {
+    left: 0; /* Start from the left */
+    right: 100%; /* Initially set right to full width */
+    transform-origin: left; /* Set transform-origin to the left */
+  }
+  .navbar .navbar-nav .nav-link:hover::after {
+    right: 0; /* Expand to the right */
+    transform: scaleX(0.5); /* Grow to full width */
+  }
+}
+@media (max-width: 576px) {
+  .navbar .navbar-nav .navbar-toggler {
+    width: 23px;
+    height: 23px;
+  }
+  .navbar .navbar-nav .navbar-toggler .navbar-toggler-icon {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+  }
 }
 
 #location iframe {
@@ -159,6 +205,8 @@ body.flip-icon .logo-container .logo {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  padding: clamp(1rem, 5vw, 2rem); /* Responsive padding */
+  margin: 0 auto; /* Center the wrapper */
 }
 
 .content-container {
@@ -171,10 +219,8 @@ body.flip-icon .logo-container .logo {
 }
 
 .appointment-card {
-  margin: 170px;
+  margin: clamp(1rem, 5vw, 170px); /* Responsive margin */
   position: relative;
-  top: 50;
-  left: 50;
   width: 80%;
   height: 55%;
   background-color: rgba(26, 24, 24, 0.848); /* Semi-transparent black */
@@ -185,7 +231,8 @@ body.flip-icon .logo-container .logo {
   flex-direction: column;
   backdrop-filter: blur(2px); /* Apply the blur effect */
   -webkit-backdrop-filter: blur(2px); /* For Safari */
-  font-size: 24px;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
+  padding: clamp(1rem, 3vw, 2rem); /* Responsive padding */
 }
 
 .title-container {
@@ -194,98 +241,153 @@ body.flip-icon .logo-container .logo {
   text-align: center;
   justify-content: center;
   color: #B18743;
-  font-size: 16px;
+  font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
   font-weight: bold;
-  margin-top: 60px;
+  margin-top: clamp(1rem, 3vw, 3rem); /* Responsive top margin */
 }
 
 .title-part1 {
-  display: flex;
-  letter-spacing: 4px;
+  letter-spacing: clamp(0.25rem, 2vw, 0.5rem); /* This is your base for part 1 */
   text-align: center;
   margin-left: 10px;
 }
 
-.title-divider {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
-  border-top: 0.1px solid #F4EDEB;
+.title-part2 {
+  /* Adjust the letter-spacing here to match the width of title-part1 */
+  letter-spacing: clamp(1.1rem, 5vw, 1.1rem); /* Increased to span the same width */
+  text-align: center;
+  margin-left: 12px;
 }
 
-.title-part2 {
+.title-divider {
   display: flex;
-  letter-spacing: 12.7px;
-  margin-left: 9px;
+  width: 100%; /* Add vertical spacing */
+  border-top: 1px solid #F4EDEB; /* Ensure the border is visible */
 }
 
 .additional-text {
   text-align: center;
-  font-size: 30px;
-  letter-spacing: 6px;
+  font-size: clamp(1.75rem, 4vw, 2rem); /* Responsive font size */
+  letter-spacing: clamp(0.375rem, 2vw, 0.75rem); /* Responsive letter-spacing */
   color: #F4EDEB;
-  margin-top: 20px; /* Add space between title and additional text */
+  margin-top: clamp(1rem, 2vw, 1.5rem); /* Responsive top margin */
 }
 
 .hours-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 20px; /* Space between sections */
+  margin-top: clamp(1rem, 2vw, 2rem); /* Responsive margin */
   width: 100%;
   max-width: 600px;
-  margin-bottom: 40px;
+  margin-bottom: clamp(1rem, 2vw, 2rem); /* Responsive bottom margin */
 }
 
-.days, .times {
+.day, .hour {
   display: flex;
-  flex-direction: column;
-}
-
-.days ol {
-  padding-left: 20px; /* Indent the ordered list */
-  list-style-type: none; /* Remove default list styling */
-}
-
-.times ol {
-  padding-left: 20px; /* Indent the ordered list */
-  list-style-type: none; /* Remove default list styling */
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive font size */
+  margin: 0.25rem 0; /* Consistent spacing */
+  letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Responsive letter-spacing */
 }
 
 .day {
-  font-size: 18px;
-  margin: 5px 0; /* Space between each entry */
-  color: #B18743; /* Gold color */
-  letter-spacing: 3px;
+  color: #B18743;
 }
 
 .hour {
-  font-size: 18px;
-  margin: 5px 0; /* Space between each entry */
   color: #F4EDEB;
-  letter-spacing: 3px;
 }
 
+/* Media Query Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .appointment-card-wrapper {
+    width: 95%; /* Allow more width on smaller screens */
+    padding: 1rem;
+  }
+  .appointment-card {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0;
+    padding: 1rem;
+    font-size: clamp(1.2rem, 4vw, 1rem); /* Adjust font size for smaller screens */
+  }
+  .title-container {
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Adjust font size for smaller screens */
+    margin-top: 2rem; /* Reduce top margin */
+  }
+  .hours-container {
+    flex-direction: row; /* Stack hours vertically on small screens */
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .day, .hour {
+    font-size: clamp(1.2rem, 3vw, 1rem); /* Smaller font size for smaller screens */
+  }
+  .additional-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+}
+@media (max-width: 576px) {
+  .appointment-card-wrapper {
+    width: 95%; /* Allow more width on smaller screens */
+    padding: 0.5rem;
+  }
+  .appointment-card {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0;
+    padding: 0.1rem;
+    font-size: clamp(1.2rem, 4vw, 1rem); /* Adjust font size for smaller screens */
+  }
+  .title-container {
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Adjust font size for smaller screens */
+    margin-top: 2rem; /* Reduce top margin */
+  }
+  .hours-container {
+    flex-direction: row; /* Stack hours vertically on small screens */
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .hours-container ol {
+    padding-left: 0.5rem;
+  }
+  .day, .hour {
+    font-size: clamp(0.5rem, 3vw, 1rem); /* Smaller font size for smaller screens */
+  }
+  .additional-text {
+    font-size: clamp(0.5rem, 4vw, 1rem);
+  }
+  .pricing-container {
+    padding: 0.5rem;
+  }
+}
 .pricing-title-container {
-  width: 15%;
+  width: 15vw;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  color: #B18743;
-  font-weight: bold;
-  font-size: 32px;
-  letter-spacing: 12px;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Ensure text is centered */
   color: #C4AE78;
+  font-weight: bold;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: clamp(0.3125rem, 2vw, 0.75rem); /* Responsive letter-spacing in rem */
+  position: relative; /* Ensure proper positioning */
+  padding: 0; /* Remove any padding that might affect centering */
+  margin: 0 auto; /* Center the container itself if needed */
 }
 
 .pricing-title {
-  margin-left: 14px;
+  padding-left: 5px;
 }
 
 .pricing-underline {
-  display: flex;
+  position: relative;
+  bottom: 0; /* Align to the bottom of the container */
+  left: 0;
+  right: 0;
   width: 100%;
-  border-top: 0.1px solid #F4EDEB;
+  border-top: 0.1px solid #F4EDEB; /* Ensure the border is visible */
 }
 
 .pricing-section {
@@ -295,42 +397,75 @@ body.flip-icon .logo-container .logo {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50%;
+  height: auto; /* Let the height adapt to content */
+  padding: 2rem; /* Add padding for breathing space */
 }
 
 .pricing-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: space-around;
   background-color: #171515;
   color: #B18743;
   width: 80%;
-  height: 70%;
-  padding-top: 180px;
-  padding-bottom: 180px;
-  margin: 30px;
+  height: auto; /* Adjust height based on content */
+  padding: clamp(2rem, 5vw, 10rem) 2rem; /* Responsive padding */
+  margin: 30px auto; /* Center the container and adjust for responsiveness */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .pricing-container li {
   list-style-type: none;
-}
-
-.cuts {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
-  letter-spacing: 4px;
+  margin: 0.4rem 0; /* Add some spacing between list items */
 }
 
 .prices {
-  display: flex;
-  align-items: center;
-  font-size: 24px;
   color: #F4EDEB;
-  letter-spacing: 4px;
 }
 
+.cuts, .prices {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1.5rem, 3vw, 1.5rem); /* Increased font size */
+  letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
+}
+
+/* Media Query Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .pricing-title-container {
+    width: 33%; /* Allow full width on smaller screens */
+  }
+  .pricing-container {
+    width: 100%; /* Full width for smaller screens */
+  }
+  .pricing-section {
+    padding: 1rem; /* Reduce padding */
+  }
+  .cuts, .prices {
+    font-size: clamp(1.2rem, 4vw, 1rem); /* Smaller font for smaller screens */
+  }
+}
+@media (max-width: 650px) {
+  .pricing-title-container {
+    width: 37%; /* Allow full width on smaller screens */
+  }
+  .cuts, .prices {
+    font-size: clamp(0.5rem, 4vw, 0.75rem); /* Smaller font for smaller screens */
+  }
+  .pricing-section {
+    padding: 0.01rem; /* Reduce padding */
+  }
+  .pricing-section {
+    margin: 5px;
+  }
+  .pricing-container {
+    padding: 0.5rem;
+  }
+  .pricing-container ul {
+    padding-left: 0.15rem;
+  }
+}
 .page-break {
   width: 100%;
   height: 40vh;
@@ -338,59 +473,91 @@ body.flip-icon .logo-container .logo {
 
 .presentation-container {
   display: flex;
-  flex-direction: column;
-  position: relative;
+  flex-direction: row;
   width: 100%;
+  justify-content: space-between; /* Ensures pictures are aligned to the left and right */
+  margin-bottom: 2rem; /* Space below the container */
 }
 
-.picture-right {
-  background: url(/assets/images/presentation_pics/presentation-pic-left.jpg);
-  background-size: cover;
-  display: flex;
-  align-self: flex-end;
-  height: 80vh;
-  width: 115vh;
-  margin-bottom: -350px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+.picture-left, .picture-right {
+  position: relative;
+  width: 100vw; /* Adjust width to be responsive based on viewport width */
 }
 
 .picture-left {
-  background: url(/assets/images/presentation_pics/presentation-pic-right.jpg);
-  background-size: cover;
-  display: flex;
-  align-self: flex-start;
-  flex-direction: start;
-  height: 80vh;
-  width: 115vh;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Ensure it appears on top */
+  margin-right: -5vw; /* Overlap to the right, using vw for responsiveness */
+  top: 25vh; /* Move the left picture down slightly, using vh for responsiveness */
 }
 
+.picture-right {
+  z-index: 1; /* Ensure it appears below the left picture */
+  margin-left: -5vw; /* Overlap to the left, using vw for responsiveness */
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover; /* Adjust how the image fits inside its container */
+  aspect-ratio: 16/9; /* Maintain the aspect ratio */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for effect */
+  display: block;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .picture-left, .picture-right {
+    width: 50vw; /* Increase the width for smaller screens */
+  }
+  .page-break {
+    height: 30vh;
+  }
+  .picture-left {
+    top: 5vh; /* Adjust the vertical position */
+  }
+  .picture-right {
+    margin-left: -3vw; /* Adjust overlap for smaller screens */
+  }
+}
+@media (max-width: 576px) {
+  .presentation-container {
+    flex-direction: column; /* Stack the images vertically on very small screens */
+    align-items: center; /* Center align the images */
+  }
+  .page-break {
+    height: 30vh;
+  }
+  .picture-left, .picture-right {
+    width: 110vw; /* Make the images larger on small screens */
+    margin: 0; /* Remove overlap on small screens */
+    top: 0; /* Reset the top position */
+  }
+  .picture-right {
+    margin-top: 2rem; /* Add space between the stacked images */
+  }
+}
 .review-title-container {
-  width: 15%;
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  color: #B18743;
-  font-weight: bold;
-  font-size: 32px;
-  letter-spacing: 12px;
   color: #C4AE78;
-  margin-bottom: 20px;
+  font-weight: bold;
+  padding-top: 15rem;
+  font-size: clamp(2rem, 2.5vw, 2rem); /* Responsive font size */
+  letter-spacing: clamp(0.5rem, 1.5vw, 1rem); /* Responsive letter-spacing */
+  margin-bottom: clamp(10px, 2vh, 20px); /* Responsive margin */
 }
 
 .review-title {
-  margin-left: 14px;
+  margin-left: clamp(5px, 1vw, 14px); /* Responsive left margin */
 }
 
 .review-underline {
   display: flex;
   width: 100%;
   border-top: 0.1px solid #F4EDEB;
-}
-
-.carousel {
-  display: relative;
 }
 
 .carousel-container {
@@ -407,63 +574,66 @@ body.flip-icon .logo-container .logo {
 }
 
 .flex-container {
+  display: flex;
+  height: 100%;
   width: 100%;
-  height: 100%;
   position: relative;
-  display: flex;
+  justify-content: space-between;
 }
 
-.carousel-image-container {
-  height: 88%;
-  width: 50%;
-  display: flex;
-  background-size: 0 50%;
-  background: no-repeat;
-  background-position-x: -70px;
-}
-
-.review {
-  flex-direction: column;
-  color: #F4EDEB;
-  width: 40%;
+.carousel {
   height: 100%;
-  display: flex;
-  padding-left: 1.5rem;
-  justify-content: space-around;
-  align-content: center;
 }
 
 .carousel-item {
-  height: 85vh;
-  position: relative;
-  flex-direction: row;
+  position: absolute;
   top: 0;
   left: 0;
-  min-width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
   opacity: 0;
-  transition: all 1s ease;
+  transition: opacity 1s ease;
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Ensures proper spacing between image and review */
 }
 
 .carousel-item.active {
   opacity: 1;
 }
 
+.carousel-image-container {
+  height: 100%;
+  width: 50%; /* Adjust width as needed */
+  background-repeat: no-repeat;
+  background-position: center;
+  -o-object-fit: contain;
+     object-fit: contain; /* Ensure image fits within the container */
+}
+
+.review {
+  flex-direction: column;
+  color: #F4EDEB;
+  width: 50%; /* Adjust width as needed */
+  height: 100%;
+  display: flex;
+  padding-left: 1.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
 .button-wrapper {
-  position: absolute; /* Position relative to the carousel container */
-  top: 100%;
-  width: 100%; /* Stretch across the width of the carousel */
-  transform: translateY(-50%); /* Center vertically */
-  z-index: 10; /* Ensure it appears above other elements */
+  position: absolute;
+  width: 100%;
+  bottom: -2rem; /* Position near the bottom of the carousel */
+  z-index: 10;
+  display: flex; /* Use flexbox to align buttons */
+  justify-content: space-around; /* Space buttons evenly */
+  padding: 0 2rem; /* Add padding to ensure buttons don't reach the edges */
 }
 
 .prev, .next {
-  position: absolute;
-  top: 100%;
   width: 4rem;
   height: 4rem;
-  transform: translateY(-50%);
   background-color: #F4EDEB;
   color: #1F232C;
   border: none;
@@ -474,28 +644,60 @@ body.flip-icon .logo-container .logo {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.prev {
-  left: 13rem;
-}
-
-.next {
-  right: 13rem;
-}
-
 .prev:hover, .next:hover {
-  background-color: #1F232C; /* Change background color on hover */
-  color: #F4EDEB; /* Change text color on hover */
+  background-color: #1F232C;
+  color: #F4EDEB;
 }
 
 .prev:active, .next:active {
-  transform: translateY(-50%) scale(0.7); /* Slightly scale down on click */
-  background-color: #F4EDEB; /* Darker background color on click */
-  color: #1F232C; /* Change text color to white on click */
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease; /* Fast transition for the click effect */
+  transform: scale(0.9);
+  background-color: #F4EDEB;
+  color: #1F232C;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
+/* Media Queries for Smaller Screens */
+@media (max-width: 1000px) {
+  .carousel-container {
+    height: 80vh; /* Increase height for smaller screens */
+    width: 90%; /* Increase width on smaller screens */
+  }
+  .review-title-container {
+    padding-top: 15rem;
+  }
+  .button-wrapper {
+    padding: 0 1rem; /* Reduce padding to adjust to smaller screens */
+  }
+  .prev, .next {
+    width: 4rem; /* Adjust button size for smaller screens */
+    height: 4rem;
+  }
+}
+@media (max-width: 576px) {
+  .review-title-container {
+    padding-top: 1rem;
+  }
+  .carousel-container {
+    height: 85vh; /* Further increase height on very small screens */
+    width: 95%; /* Further increase width on smaller screens */
+  }
+  .button-wrapper {
+    bottom: -2rem;
+    padding: 0 0.25rem; /* Further reduce padding for very small screens */
+  }
+  .prev, .next {
+    width: 3.8rem; /* Further adjust button size */
+    height: 3.8rem;
+  }
+  .prev {
+    left: 1rem;
+  }
+  .next {
+    right: 1rem;
+  }
+}
 .footer {
-  height: 45vh;
+  height: 75vh; /* Adjust for better scaling */
   width: 100%;
   background-color: #171515;
   display: flex;
@@ -503,6 +705,14 @@ body.flip-icon .logo-container .logo {
   position: relative;
   align-items: center;
   justify-content: center;
+  padding: 2rem; /* Add padding to ensure proper spacing */
+}
+
+.schedule-container {
+  display: flex;
+  flex-direction: row; /* Stack title and days/hours vertically */
+  align-items: flex-start; /* Align everything to the left */
+  width: 100%;
 }
 
 .footer-title-container {
@@ -512,72 +722,63 @@ body.flip-icon .logo-container .logo {
   align-content: flex-end;
   justify-content: space-around;
   width: 100%;
-  height: 10vh;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
-.hours-title-container {
-  width: 24%;
-  display: flex;
+.hours-title-container, .inquiries-title-container {
+  width: 74%;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
-  color: #C4AE78;
-  font-weight: normal;
-  font-size: 28px;
-  letter-spacing: 8px;
-}
-
-.inquiries-title-container {
-  width: 24%;
-  display: flex;
-  flex-direction: column;
+  padding: 1rem;
   text-align: center;
   align-items: center;
   font-weight: normal;
-  font-size: 28px;
-  letter-spacing: 8px;
+  font-size: clamp(1rem, 4vw, 2rem); /* Adjusted clamp values */
+  letter-spacing: clamp(0.2rem, 1vw, 0.5rem); /* Adjusted clamp values */
   color: #C4AE78;
 }
 
-.inquiries-title {
-  font-size: 22px;
+.hours-title, .inquiries-title {
+  font-size: clamp(1.25rem, 3vw, 2rem); /* Adjusted clamp values */
+  color: #C4AE78;
 }
 
-.inquiries-underline {
+.hours-underline, .inquiries-underline {
   display: flex;
-  width: 70%;
-  border-top: 0.1px solid #F4EDEB;
-}
-
-.hours-title {
-  font-size: 22px;
-}
-
-.hours-underline {
-  display: flex;
-  width: 100%;
+  width: 100%; /* Ensure it fits within the container */
   border-top: 0.1px solid #F4EDEB;
 }
 
 .footer-content-container {
   width: 100%;
-  height: 30vh;
+  height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: center;
+  padding-top: 2rem; /* Add padding for spacing */
 }
 
 .hours-container-footer {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column; /* Ensure days and hours are aligned horizontally */
+  justify-content: space-between; /* Space them out evenly */
   align-items: center;
   text-align: center;
-  margin-top: 20px; /* Space between sections */
   width: 100%;
   max-width: 600px;
+  margin-top: 20px;
   margin-bottom: 20px;
+  font-size: clamp(1rem, 2vw, 1.5rem); /* Adjusted clamp values */
+  letter-spacing: clamp(0.1rem, 0.5vw, 0.3rem); /* Adjusted letter spacing */
+}
+
+.days, .times {
+  display: flex;
+  flex-direction: column; /* Keep the list items stacked within each section */
+  align-items: flex-start; /* Align items to the left */
+  margin: 0 1rem; /* Add some spacing between the days and times columns */
 }
 
 .inquiries-container-footer {
@@ -585,13 +786,13 @@ body.flip-icon .logo-container .logo {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  text-align: left;
-  margin-top: 20px; /* Space between sections */
+  text-align: center;
   width: 100%;
   max-width: 600px;
-  margin-bottom: 40px;
-  font-size: 18px;
-  letter-spacing: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: clamp(0.25rem, 2vw, 0.5rem); /* Adjusted clamp values */
+  letter-spacing: clamp(0.1rem, 0.5vw, 0.3rem); /* Adjusted clamp values */
 }
 
 .inquire-details {
@@ -599,6 +800,10 @@ body.flip-icon .logo-container .logo {
   flex-wrap: wrap;
   flex-direction: column;
   width: 70%;
+}
+
+.email, .address, .appointment-status, .inquire, .phone, .number {
+  font-size: clamp(1rem, 1.5vw, 1.25rem); /* Adjusted clamp values */
 }
 
 .email {
@@ -633,16 +838,55 @@ body.flip-icon .logo-container .logo {
   justify-content: space-evenly;
   width: 100%;
   height: 50%;
+  margin-top: 20px;
 }
 
-.google-maps-icon img {
-  height: 50px;
+.google-maps-icon img, .facebook-icon img, .instagram-icon img {
+  height: clamp(30px, 5vw, 40px); /* Adjusted clamp values */
 }
 
-.facebook-icon img {
-  height: 50px;
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .footer-title-container {
+    flex-direction: row;
+    height: auto;
+  }
+  .hours-title-container, .inquiries-title-container {
+    width: 90%;
+  }
+  .footer-content-container {
+    flex-direction: row;
+    height: auto;
+  }
+  .hours-container-footer, .inquiries-container-footer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  .footer {
+    height: 80vh; /* Increase vertical coverage */
+    padding: 3rem 1rem; /* Adjust padding if needed */
+  }
 }
-
-.instagram-icon img {
-  height: 50px;
+@media (max-width: 576px) {
+  .icon-container {
+    justify-content: space-around; /* Center icons on small screens */
+    margin-top: 10px;
+  }
+  .google-maps-icon img, .facebook-icon img, .instagram-icon img {
+    height: clamp(30px, 4vw, 35px); /* Adjusted clamp values */
+  }
+  .footer {
+    height: 90vh; /* Further increase vertical coverage */
+    padding: 4rem 1.5rem; /* Additional padding for better spacing */
+  }
+  .hours-container-footer .day, .hours-container-footer .hour {
+    font-size: clamp(0.75rem, 1.5vw, 1rem) !important; /* Further adjustment for very small screens */
+  }
+  .schedule-container {
+    justify-content: space-evenly;
+  }
+  .schedule-container ol {
+    padding: 0.2rem;
+  }
 }/*# sourceMappingURL=stormys_landing.css.map */

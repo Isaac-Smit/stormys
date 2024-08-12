@@ -1,5 +1,5 @@
 .footer {
-    height: 45vh;
+    height: clamp(50vh, 75vh, 90vh); /* Adjust for better scaling */
     width: 100%;
     background-color: #171515;
     display: flex;
@@ -7,6 +7,14 @@
     position: relative;
     align-items: center;
     justify-content: center;
+    padding: 2rem; /* Add padding to ensure proper spacing */
+}
+
+.schedule-container {
+    display: flex;
+    flex-direction: row; /* Stack title and days/hours vertically */
+    align-items: flex-start; /* Align everything to the left */
+    width: 100%;
 }
 
 .footer-title-container {
@@ -16,72 +24,63 @@
     align-content: flex-end;
     justify-content: space-around;
     width: 100%;
-    height: 10vh;
+    height: auto;
+    margin-bottom: 2rem;
 }
 
-.hours-title-container {
-    width: 24%;
-    display: flex;
+.hours-title-container, .inquiries-title-container {
+    width: clamp(60%, 74%, 100%);
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    color: #C4AE78;
-    font-weight: normal;
-    font-size: 28px;
-    letter-spacing: 8px;
-}
-
-.inquiries-title-container {
-    width: 24%;
-    display: flex;
-    flex-direction: column;
+    padding: 1rem;
     text-align: center;
     align-items: center;
     font-weight: normal;
-    font-size: 28px;
-    letter-spacing: 8px;
+    font-size: clamp(1rem, 4vw, 2rem); /* Adjusted clamp values */
+    letter-spacing: clamp(0.2rem, 1vw, 0.5rem); /* Adjusted clamp values */
     color: #C4AE78;
 }
 
-.inquiries-title {
-    font-size: 22px;
+.hours-title, .inquiries-title {
+    font-size: clamp(1.25rem, 3vw, 2rem); /* Adjusted clamp values */
+    color: #C4AE78;
 }
 
-.inquiries-underline {
+.hours-underline, .inquiries-underline {
     display: flex;
-    width: 70%;
-    border-top: 0.10px solid #F4EDEB;   
-}
-
-.hours-title {
-    font-size: 22px;
-}
-
-.hours-underline {
-    display: flex;
-    width: 100%;
-    border-top: 0.10px solid #F4EDEB;
+    width: 100%; /* Ensure it fits within the container */
+    border-top: 0.1px solid #F4EDEB;   
 }
 
 .footer-content-container {
     width: 100%;
-    height: 30vh;
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    align-content: flex-start;
+    align-content:center;
+    padding-top: 2rem; /* Add padding for spacing */   
 }
 
 .hours-container-footer {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column; /* Ensure days and hours are aligned horizontally */
+    justify-content: space-between; /* Space them out evenly */
     align-items: center;
     text-align: center;
-    margin-top: 20px; /* Space between sections */
     width: 100%;
     max-width: 600px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Adjusted clamp values */
+    letter-spacing: clamp(0.1rem, 0.5vw, 0.3rem); /* Adjusted letter spacing */
+}
+
+.days, .times {
+    display: flex;
+    flex-direction: column; /* Keep the list items stacked within each section */
+    align-items: flex-start; /* Align items to the left */
+    margin: 0 1rem; /* Add some spacing between the days and times columns */
 }
 
 .inquiries-container-footer {
@@ -89,13 +88,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    text-align: left;
-    margin-top: 20px; /* Space between sections */
+    text-align: center;
     width: 100%;
     max-width: 600px;
-    margin-bottom: 40px;
-    font-size: 18px;
-    letter-spacing: 4px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: clamp(0.25rem, 2vw, 0.5rem); /* Adjusted clamp values */
+    letter-spacing: clamp(0.1rem, 0.5vw, 0.3rem); /* Adjusted clamp values */
 }
 
 .inquire-details {
@@ -103,6 +102,10 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 70%;
+}
+
+.email, .address, .appointment-status, .inquire, .phone, .number {
+    font-size: clamp(1rem, 1.5vw, 1.25rem); /* Adjusted clamp values */
 }
 
 .email {
@@ -115,7 +118,7 @@
     color: #C4AE78;
 }
 .inquire {
-    color:#B18743;
+    color: #B18743;
 }
 .phone {
     color: #B18743;
@@ -132,14 +135,68 @@
     justify-content: space-evenly;
     width: 100%;
     height: 50%;
+    margin-top: 20px;
 }
 
-.google-maps-icon img{
-    height: 50px;
+.google-maps-icon img, .facebook-icon img, .instagram-icon img {
+    height: clamp(30px, 5vw, 40px); /* Adjusted clamp values */
 }
-.facebook-icon img{
-    height: 50px;
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .footer-title-container {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .hours-title-container, .inquiries-title-container {
+        width: 90%;
+    }
+
+    .footer-content-container {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .hours-container-footer, .inquiries-container-footer {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        height: clamp(60vh, 80vh, 100vh); /* Increase vertical coverage */
+        padding: 3rem 1rem; /* Adjust padding if needed */
+    }
 }
-.instagram-icon img{
-    height: 50px
+
+@media (max-width: 576px) {
+    .icon-container {
+        justify-content: space-around; /* Center icons on small screens */
+        margin-top: 10px;
+    }
+
+    .google-maps-icon img, .facebook-icon img, .instagram-icon img {
+        height: clamp(30px, 4vw, 35px); /* Adjusted clamp values */
+    }
+
+    .footer {
+        height: clamp(60vh, 90vh, 110vh); /* Further increase vertical coverage */
+        padding: 4rem 1.5rem; /* Additional padding for better spacing */
+    }
+
+   
+        .hours-container-footer .day, .hours-container-footer .hour {
+            font-size: clamp(0.75rem, 1.5vw, 1rem) !important; /* Further adjustment for very small screens */
+    }
+
+    .schedule-container {
+         justify-content: space-evenly;
+        ol {
+            padding: 0.2rem;
+        }
+    }
 }
+
+
+

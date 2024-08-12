@@ -18,7 +18,7 @@
 
 
     <header>
-
+        <section id="Home"></section>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
                 
@@ -136,10 +136,15 @@
     <div class ="page-break"></div>
 
 
-    <div class ="presentation-container">
-        <div class ="picture-right"></div>
-        <div class ="picture-left"></div>
+    <div class="presentation-container">
+        <div class="picture-left">
+            <img src="/assets/images/presentation_pics/presentation-pic-left.jpg" alt="Left Picture" class="responsive-image">
+        </div>
+        <div class="picture-right">
+            <img src="/assets/images/presentation_pics/presentation-pic-right.jpg" alt="Right Picture" class="responsive-image">
+        </div>
     </div>
+    
 
     <div class ="page-break">
         <section id="Reviews"></section>
@@ -156,20 +161,20 @@
         <div class="carousel">
             <div class="carousel-item active">
                 <div class="flex-container">
-                <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image-_1.png)"></div>
+                <div class="carousel-image-container ratio-4x3" style="background-image:url(assets/images/carousel_images/carousel_image-_1.png)"></div>
 
                 <div class="review"><p>"This kingdom is truly the greatest in all the lands!" - Sir John</p></div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="flex-container">
-                    <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image_2.png)"></div>
+                    <div class="carousel-image-container ratio-4x3" style="background-image:url(assets/images/carousel_images/carousel_image_2.png)"></div>
                     <div class= "review"><p>"I have never seen such wisdom and power in a ruler." - Lady Margaret</p></div>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="flex-container">
-                    <div class="carousel-image-container" style="background-image:url(assets/images/carousel_images/carousel_image_3.png)"></div>
+                    <div class="carousel-image-container ratio-4x3" style="background-image:url(assets/images/carousel_images/carousel_image_3.png)"></div>
                     <div class= "review"><p>"The magic here is unmatched. Long live the King!" - Wizard Alistair</p></div>    
                 </div>
             </div>
@@ -183,69 +188,64 @@
     <div class ="page-break"></div>
 
     <div class="footer w-100">
-
-
-        <div class="footer-title-container">
-        <div class="hours-title-container">
-            <span class="hours-title">Business Hours</span>
-            <span class="hours-underline"></span>
-        </div>
-
-        <div class="inquiries-title-container">
-            <span class="inquiries-title">Inquiries</span>
-            <span class="inquiries-underline"></span>
-        </div>
-        </div>
-
-
-
         <div class="footer-content-container">
-
-        <div class="hours-container-footer">
-            <div class="days">
-                <ol>
-                    <li class="day">Sunday:</li>
-                    <li class="day">Monday:</li>
-                    <li class="day">Tuesday:</li>
-                    <li class="day">Wednesday:</li>
-                    <li class="day">Thursday:</li>
-                    <li class="day">Friday:</li>
-                    <li class="day">Saturday:</li>
-                </ol>
+            
+            <!-- Schedule Section -->
+            <div class="hours-container-footer">
+                <div class="hours-title-container">
+                    <span class="hours-title">Business Hours</span>
+                    <span class="hours-underline"></span>
+                </div>
+                <div class="schedule-container">
+                    <div class="days">
+                        <ol>
+                            <li class="day">Sunday:</li>
+                            <li class="day">Monday:</li>
+                            <li class="day">Tuesday:</li>
+                            <li class="day">Wednesday:</li>
+                            <li class="day">Thursday:</li>
+                            <li class="day">Friday:</li>
+                            <li class="day">Saturday:</li>
+                        </ol>
+                    </div>
+                    <div class="times">
+                        <ol>
+                            <li class="hour">CLOSED</li>
+                            <li class="hour">CLOSED</li>
+                            <li class="hour">9:30AM - 5:30PM</li>
+                            <li class="hour">9:30AM - 5:30PM</li>
+                            <li class="hour">9:30AM - 6:30PM</li>
+                            <li class="hour">9:30AM - 5:30PM</li>
+                            <li class="hour">10AM - 2PM</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-            <div class="times">
-                <ol>
-                    <li class="hour">CLOSED</li>
-                    <li class="hour">CLOSED</li>
-                    <li class="hour">9:30AM - 5:30PM</li>
-                    <li class="hour">9:30AM - 5:30PM</li>
-                    <li class="hour">9:30AM - 6:30PM</li>
-                    <li class="hour">9:30AM - 5:30PM</li>
-                    <li class="hour">10AM - 2PM</li>
-                </ol>
+    
+            <!-- Inquiries Section -->
+            <div class="inquiries-container-footer">
+                <div class="inquiries-title-container">
+                    <span class="inquiries-title">Inquiries</span>
+                    <span class="inquiries-underline"></span>
+                </div>
+                <div class="inquire-details">
+                    <span class="email">Email: <span class="address">Example@gmail.com</span></span>
+                    <span class="appointment-status">No Appointments</span>
+                    <span class="inquire">For other inquiries</span>
+                    <span class="phone">Phone: <span class="number">027 337 8767</span></span>
+                </div>
+                <div class="icon-container">
+                    <div class="google-maps-icon"><img src="assets/images/page_icons/google_maps/google-maps-100.png"></div>
+                    <div class="facebook-icon"><img src="assets/images/page_icons/facebook/facebook-100.png"></div>
+                    <div class="instagram-icon"><img src="assets/images/page_icons/instagram/instagram-100.png"></div>
+                </div>
             </div>
+    
         </div>
-
-        <section id="About"></section>
-
-        <div class ="inquiries-container-footer">
-            <div class ="inquire-details">
-                <span class="email">Email: <span class="address"> Example@gmail.com</span></span>
-                <span class="appointment-status">No Appointments</span>
-                <span class="inquire">For other inquiries</span>
-            <span class="phone">Phone: <span class="number"> 027 337 8767</span></span>
-            </div>   
-            <div class="icon-container">
-                <div class="google-maps-icon"><img src="assets/images/page_icons/google_maps/google-maps-100.png"></div>
-                <div class="facebook-icon"><img src="assets/images/page_icons/facebook/facebook-100.png"></div>
-                <div class="instagram-icon"><img src="assets/images/page_icons/instagram/instagram-100.png"></div>
-            </div>
-
-        </div>
-
-        </div>
-
     </div>
+    
+    
+    
 
 
     <script src="assets/js/stormys_landing.js"></script> <!-- Include JavaScript file -->
