@@ -1,5 +1,5 @@
 body {
-    
+    overflow-x: hidden;
     .navbar-brand .logo {
         opacity: 0;
     }
@@ -17,6 +17,9 @@ body {
         .logo-container .logo {
             opacity: 0;
         }
+    }
+    .logo-container .logo {
+        transition: height 0.5s ease, width 0.5s ease;
     }
 
 }

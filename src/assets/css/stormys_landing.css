@@ -28,6 +28,9 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
 body .navbar-brand .logo {
   opacity: 0;
 }
@@ -39,6 +42,9 @@ body.flip-icon .navbar-brand .logo {
 }
 body.flip-icon .logo-container .logo {
   opacity: 0;
+}
+body .logo-container .logo {
+  transition: height 0.5s ease, width 0.5s ease;
 }
 
 .navbar {
@@ -448,7 +454,7 @@ body.flip-icon .logo-container .logo {
 }
 @media (max-width: 650px) {
   .pricing-title-container {
-    width: 37%; /* Allow full width on smaller screens */
+    width: 50%; /* Allow full width on smaller screens */
   }
   .cuts, .prices {
     font-size: clamp(0.5rem, 4vw, 0.75rem); /* Smaller font for smaller screens */
@@ -474,12 +480,15 @@ body.flip-icon .logo-container .logo {
 .presentation-container {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  position: relative;
   width: 100%;
   justify-content: space-between; /* Ensures pictures are aligned to the left and right */
   margin-bottom: 2rem; /* Space below the container */
 }
 
 .picture-left, .picture-right {
+  overflow: hidden;
   position: relative;
   width: 100vw; /* Adjust width to be responsive based on viewport width */
 }
@@ -501,7 +510,7 @@ body.flip-icon .logo-container .logo {
   -o-object-fit: cover;
      object-fit: cover; /* Adjust how the image fits inside its container */
   aspect-ratio: 16/9; /* Maintain the aspect ratio */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8); /* Add shadow for effect */
   display: block;
 }
 
@@ -524,9 +533,10 @@ body.flip-icon .logo-container .logo {
   .presentation-container {
     flex-direction: column; /* Stack the images vertically on very small screens */
     align-items: center; /* Center align the images */
+    top: 0rem;
   }
   .page-break {
-    height: 30vh;
+    height: 35vh;
   }
   .picture-left, .picture-right {
     width: 110vw; /* Make the images larger on small screens */
@@ -837,12 +847,49 @@ body.flip-icon .logo-container .logo {
   align-content: flex-end;
   justify-content: space-evenly;
   width: 100%;
-  height: 50%;
   margin-top: 20px;
 }
 
-.google-maps-icon img, .facebook-icon img, .instagram-icon img {
-  height: clamp(30px, 5vw, 40px); /* Adjusted clamp values */
+.icon-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px; /* Increase width for padding */
+  height: 60px; /* Increase height for padding */
+  padding: 0.3px; /* Padding inside the icon container */
+  border-radius: 30%; /* Fully rounded borders */
+  transition: transform 0.5s ease, background-color 0.5s ease; /* Smooth animation for transformation and background */
+}
+
+.icon-container svg {
+  transition: transform 0.5s ease, fill 0.5s ease;
+  fill: #B18743; /* Default gold color */
+  width: 50px; /* Icon width */
+  height: 50px; /* Icon height */
+}
+
+.google-maps-icon:hover,
+.facebook-icon:hover,
+.instagram-icon:hover {
+  transform: scale(1.1) rotate(360deg); /* Rotate the entire container, including the background */
+}
+
+.google-maps-icon:hover svg,
+.facebook-icon:hover svg,
+.instagram-icon:hover svg {
+  fill: black; /* Change icon color to black on hover */
+}
+
+.google-maps-icon:hover {
+  background-color: #34A853; /* Google Maps green background */
+}
+
+.facebook-icon:hover {
+  background-color: #3b5998; /* Facebook blue background */
+}
+
+.instagram-icon:hover {
+  background-color: #E4405F; /* Instagram pink background */
 }
 
 /* Media Queries for Smaller Screens */
