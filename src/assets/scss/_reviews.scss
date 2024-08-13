@@ -5,7 +5,6 @@
     justify-content: center;
     color: #C4AE78;
     font-weight: bold;
-    padding-top: 15rem;
     font-size: clamp(2rem, 2.5vw, 2rem); /* Responsive font size */
     letter-spacing: clamp(0.5rem, 1.5vw, 1rem); /* Responsive letter-spacing */
     margin-bottom: clamp(10px, 2vh, 20px); /* Responsive margin */
@@ -76,9 +75,10 @@
     width: 50%; /* Adjust width as needed */
     height: 100%;
     display: flex;
-    padding-left: 1.5rem;
+    padding: 1.5rem;
     justify-content: center;
     align-content: center;
+    text-align: center;
 }
 
 .button-wrapper {
@@ -124,7 +124,7 @@
     }
 
     .review-title-container{
-        padding-top: 15rem;
+        padding-top: 4rem;
     }
 
     .button-wrapper {
