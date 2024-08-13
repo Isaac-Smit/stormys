@@ -474,7 +474,7 @@ body.flip-icon .logo-container .logo {
 }
 .page-break {
   width: 100%;
-  height: 40vh;
+  height: 20vh;
 }
 
 .presentation-container {
@@ -521,7 +521,7 @@ body.flip-icon .logo-container .logo {
     width: 50vw; /* Increase the width for smaller screens */
   }
   .page-break {
-    height: 30vh;
+    height: 25vh;
   }
   .picture-left {
     top: 5vh; /* Adjust the vertical position */
@@ -535,9 +535,10 @@ body.flip-icon .logo-container .logo {
     flex-direction: column; /* Stack the images vertically on very small screens */
     align-items: center; /* Center align the images */
     top: 0rem;
+    height: 40vh;
   }
   .page-break {
-    height: 35vh;
+    height: 10vh;
   }
   .picture-left, .picture-right {
     width: 110vw; /* Make the images larger on small screens */
@@ -555,7 +556,6 @@ body.flip-icon .logo-container .logo {
   justify-content: center;
   color: #C4AE78;
   font-weight: bold;
-  padding-top: 15rem;
   font-size: clamp(2rem, 2.5vw, 2rem); /* Responsive font size */
   letter-spacing: clamp(0.5rem, 1.5vw, 1rem); /* Responsive letter-spacing */
   margin-bottom: clamp(10px, 2vh, 20px); /* Responsive margin */
@@ -627,9 +627,10 @@ body.flip-icon .logo-container .logo {
   width: 50%; /* Adjust width as needed */
   height: 100%;
   display: flex;
-  padding-left: 1.5rem;
+  padding: 1.5rem;
   justify-content: center;
   align-content: center;
+  text-align: center;
 }
 
 .button-wrapper {
@@ -674,7 +675,7 @@ body.flip-icon .logo-container .logo {
     width: 90%; /* Increase width on smaller screens */
   }
   .review-title-container {
-    padding-top: 15rem;
+    padding-top: 4rem;
   }
   .button-wrapper {
     padding: 0 1rem; /* Reduce padding to adjust to smaller screens */
@@ -686,7 +687,7 @@ body.flip-icon .logo-container .logo {
 }
 @media (max-width: 576px) {
   .review-title-container {
-    padding-top: 1rem;
+    padding-top: 4rem;
   }
   .carousel-container {
     height: 85vh; /* Further increase height on very small screens */
@@ -859,7 +860,7 @@ body.flip-icon .logo-container .logo {
   height: 60px; /* Increase height for padding */
   padding: 0.3px; /* Padding inside the icon container */
   border-radius: 30%; /* Fully rounded borders */
-  transition: transform 0.5s ease, background-color 0.5s ease; /* Smooth animation for transformation and background */
+  transition: transform 0.85s ease, background-color 0.7s ease; /* Smooth animation for transformation and background */
 }
 
 .icon-container svg {
@@ -878,19 +879,22 @@ body.flip-icon .logo-container .logo {
 .google-maps-icon:hover svg,
 .facebook-icon:hover svg,
 .instagram-icon:hover svg {
-  fill: black; /* Change icon color to black on hover */
+  fill: #171515; /* Change icon color to black on hover */
 }
 
 .google-maps-icon:hover {
-  background-color: #34A853; /* Google Maps green background */
+  background-color: #B18743; /* Google Maps green background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .facebook-icon:hover {
-  background-color: #3b5998; /* Facebook blue background */
+  background-color: #B18743; /* Facebook blue background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .instagram-icon:hover {
-  background-color: #E4405F; /* Instagram pink background */
+  background-color: #B18743; /* Instagram pink background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 /* Media Queries for Smaller Screens */

@@ -64,10 +64,11 @@
         flex-direction: column; /* Stack the images vertically on very small screens */
         align-items: center; /* Center align the images */
         top: 0rem;
+        height: 40vh;
     }
 
     .page-break {
-        height: 25vh;
+        height: 10vh;
     }
 
 

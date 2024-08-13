@@ -146,7 +146,7 @@
     height: 60px; /* Increase height for padding */
     padding: 0.3px; /* Padding inside the icon container */
     border-radius: 30%; /* Fully rounded borders */
-    transition: transform 0.5s ease, background-color 0.5s ease; /* Smooth animation for transformation and background */
+    transition: transform 0.85s ease, background-color 0.7s ease; /* Smooth animation for transformation and background */
 }
 
 .icon-container svg {
@@ -165,19 +165,22 @@
 .google-maps-icon:hover svg,
 .facebook-icon:hover svg,
 .instagram-icon:hover svg {
-    fill: black; /* Change icon color to black on hover */
+    fill: #171515; /* Change icon color to black on hover */
 }
 
 .google-maps-icon:hover {
-    background-color: #34A853; /* Google Maps green background */
+    background-color: #B18743; /* Google Maps green background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .facebook-icon:hover {
-    background-color: #3b5998; /* Facebook blue background */
+    background-color: #B18743; /* Facebook blue background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 .instagram-icon:hover {
-    background-color: #E4405F; /* Instagram pink background */
+    background-color: #B18743; /* Instagram pink background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
 }
 
 
