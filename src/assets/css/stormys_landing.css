@@ -482,6 +482,7 @@ body.flip-icon .logo-container .logo {
   flex-direction: row;
   overflow: hidden;
   position: relative;
+  height: 100vh;
   width: 100%;
   justify-content: space-between; /* Ensures pictures are aligned to the left and right */
   margin-bottom: 2rem; /* Space below the container */
