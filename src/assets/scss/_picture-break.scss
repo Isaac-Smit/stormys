@@ -40,22 +40,42 @@
     display: block;
 }
 
-/* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
-    .picture-left, .picture-right {
-        width: 50vw; /* Increase the width for smaller screens */
+@media (max-width: 1050px) {
+    
+    .presentation-container{
+        height: 80vh;
     }
 
     .page-break {
-        height: 25vh;
+        height: 10vh
+    }
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    .presentation-container {
+        flex-direction: column; /* Stack the images vertically on very small screens */
+        align-items: center; /* Center align the images */
+        top: 0rem;
+        height: 100vh;
+    }
+
+    .picture-left, .picture-right {
+        width: 80vw; /* Increase the width for smaller screens */
     }
 
     .picture-left {
-        top: 5vh; /* Adjust the vertical position */
+        padding-bottom: 8rem;
     }
 
-    .picture-right {
-        margin-left: -3vw; /* Adjust overlap for smaller screens */
+    .page-break {
+        height: 5vh;
+    }
+
+    .picture-left, .picture-right {
+        width: 110vw; /* Make the images larger on small screens */
+        margin: 0; /* Remove overlap on small screens */
+        top: 0; /* Reset the top position */
     }
 }
 
@@ -80,5 +100,19 @@
 
     .picture-right {
         margin-top: 2rem; /* Add space between the stacked images */
+    }
+}
+
+@media (max-width: 345px) {
+    .page-break {
+        height: 10vh;
+    }
+
+    .presentation-container {
+        height: 60vh;
+    }
+
+    .picture-left {
+        padding-bottom: 0rem;
     }
 }

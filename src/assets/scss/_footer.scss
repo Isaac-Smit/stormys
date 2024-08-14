@@ -184,7 +184,11 @@
 }
 
 
-
+@media (max-width:1050px) {
+    .footer {
+        height:90vh;
+    }
+}
 
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
@@ -242,5 +246,13 @@
     }
 }
 
+@media (max-width: 345px) {
+    .hours-container-footer {
+        display: none;
+    }
+    .footer {
+        height: 40vh;
+    }
+}
 
 
