@@ -72,6 +72,12 @@
     letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
 }
 
+@media (max-width: 1024px) {
+    .pricing-title-container {
+        width: 26%; /* Allow full width on smaller screens */
+    }
+}
+
 /* Media Query Adjustments for Smaller Screens */
 @media (max-width: 768px) {
     .pricing-title-container {

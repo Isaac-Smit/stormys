@@ -205,8 +205,8 @@ body.flip-icon .logo-container .logo {
   display: flex;
   background: url("/assets/images/stormys_waiting.jpeg");
   background-size: cover;
-  height: 70%;
-  width: 80%;
+  height: 65%;
+  width: 85%;
   position: relative;
   align-items: center;
   justify-content: center;
@@ -304,6 +304,34 @@ body.flip-icon .logo-container .logo {
   color: #F4EDEB;
 }
 
+@media (max-width: 1024px) {
+  .appointment-card-wrapper {
+    width: 95%; /* Allow more width on smaller screens */
+    padding: 3rem;
+  }
+  .appointment-card {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0;
+    padding: 1rem;
+    font-size: clamp(1.2rem, 4vw, 1rem); /* Adjust font size for smaller screens */
+  }
+  .title-container {
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* Adjust font size for smaller screens */
+    margin-top: 2rem; /* Reduce top margin */
+  }
+  .hours-container {
+    flex-direction: row; /* Stack hours vertically on small screens */
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .day, .hour {
+    font-size: clamp(1.2rem, 3vw, 1rem); /* Smaller font size for smaller screens */
+  }
+  .additional-text {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+}
 /* Media Query Adjustments for Smaller Screens */
 @media (max-width: 768px) {
   .appointment-card-wrapper {
@@ -437,6 +465,11 @@ body.flip-icon .logo-container .logo {
   letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
 }
 
+@media (max-width: 1024px) {
+  .pricing-title-container {
+    width: 26%; /* Allow full width on smaller screens */
+  }
+}
 /* Media Query Adjustments for Smaller Screens */
 @media (max-width: 768px) {
   .pricing-title-container {
@@ -526,10 +559,12 @@ body.flip-icon .logo-container .logo {
 /* Media Queries for Smaller Screens */
 @media (max-width: 768px) {
   .presentation-container {
+    justify-content: space-between;
     flex-direction: column; /* Stack the images vertically on very small screens */
     align-items: center; /* Center align the images */
     top: 0rem;
-    height: 100vh;
+    height: 150vh;
+    padding: 2rem;
   }
   .picture-left, .picture-right {
     width: 80vw; /* Increase the width for smaller screens */
@@ -538,7 +573,7 @@ body.flip-icon .logo-container .logo {
     padding-bottom: 8rem;
   }
   .page-break {
-    height: 5vh;
+    height: 10vh;
   }
   .picture-left, .picture-right {
     width: 110vw; /* Make the images larger on small screens */
@@ -548,10 +583,11 @@ body.flip-icon .logo-container .logo {
 }
 @media (max-width: 576px) {
   .presentation-container {
+    justify-content: space-evenly;
     flex-direction: column; /* Stack the images vertically on very small screens */
     align-items: center; /* Center align the images */
     top: 0rem;
-    height: 40vh;
+    height: 100vh;
   }
   .page-break {
     height: 10vh;
@@ -562,7 +598,10 @@ body.flip-icon .logo-container .logo {
     top: 0; /* Reset the top position */
   }
   .picture-right {
-    margin-top: 2rem; /* Add space between the stacked images */
+    margin-top: 0rem; /* Add space between the stacked images */
+  }
+  .picture-left {
+    padding-bottom: 0rem;
   }
 }
 @media (max-width: 345px) {
@@ -570,7 +609,7 @@ body.flip-icon .logo-container .logo {
     height: 10vh;
   }
   .presentation-container {
-    height: 60vh;
+    height: 80vh;
   }
   .picture-left {
     padding-bottom: 0rem;
@@ -923,7 +962,7 @@ body.flip-icon .logo-container .logo {
 
 @media (max-width: 1050px) {
   .footer {
-    height: 90vh;
+    height: 120vh;
   }
 }
 /* Media Queries for Smaller Screens */
@@ -945,7 +984,7 @@ body.flip-icon .logo-container .logo {
     margin-bottom: 15px;
   }
   .footer {
-    height: 80vh; /* Increase vertical coverage */
+    height: 110vh; /* Increase vertical coverage */
     padding: 3rem 1rem; /* Adjust padding if needed */
   }
 }
@@ -976,6 +1015,6 @@ body.flip-icon .logo-container .logo {
     display: none;
   }
   .footer {
-    height: 40vh;
+    height: 60vh;
   }
 }/*# sourceMappingURL=stormys_landing.css.map */
