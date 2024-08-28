@@ -44,20 +44,22 @@
     text-align: center;
     justify-content: center;
     color: #B18743;
-    font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
+    
     font-weight: bold;
     margin-top: clamp(1rem, 3vw, 3rem); /* Responsive top margin */
 }
 
 .title-part1 {
-    letter-spacing: clamp(0.25rem, 2vw, 0.5rem); /* This is your base for part 1 */
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    letter-spacing: clamp(0.5rem, 2vw, 1rem); /* This is your base for part 1 */
     text-align: center;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 .title-part2 {
     /* Adjust the letter-spacing here to match the width of title-part1 */
-    letter-spacing: clamp(1.1rem, 5vw, 1.1rem); /* Increased to span the same width */
+    font-size: clamp(1.5rem, 3vw, 2rem); /* Responsive font size */
+    letter-spacing: clamp(0.25rem, 5vw, 0.75rem); /* Increased to span the same width */
     text-align: center;
     margin-left: 12px;
 }
