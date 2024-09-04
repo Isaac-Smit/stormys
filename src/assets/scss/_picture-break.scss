@@ -31,6 +31,10 @@
     margin-left: -5vw; /* Overlap to the left, using vw for responsiveness */
 }
 
+.picture-right img {
+    transform: translateX(0%) translateY(0%); /* Shift image horizontally and vertically */
+}
+
 .responsive-image {
     width: 100%;
     height: auto;

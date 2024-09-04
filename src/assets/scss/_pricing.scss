@@ -70,6 +70,7 @@
     align-items: center;
     font-size: clamp(1.5rem, 3vw, 1.5rem); /* Increased font size */
     letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
+    padding: 1rem;
 }
 
 @media (max-width: 1024px) {
