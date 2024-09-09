@@ -12,7 +12,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/src/assets/images/background_rotated.png") top center repeat; /* Ensure the top of the image is at the top of the page */
+  background: url("src/assets/images/background_rotated.png") top center repeat; /* Ensure the top of the image is at the top of the page */
   background-size: contain; /* Adjust as needed */
   background-attachment: scroll;
   opacity: 0.4;
@@ -203,7 +203,7 @@ body.flip-icon .logo-container .logo {
 
 .appointment-card-wrapper {
   display: flex;
-  background: url("src/assets/images/stormys_waiting.jpeg");
+  background: url("/src/assets/images/stormys_waiting.jpeg");
   background-size: cover;
   height: 65%;
   width: 85%;
