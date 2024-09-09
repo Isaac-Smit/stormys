@@ -20,7 +20,8 @@ body::before {
 }
 @media (max-width: 1024px) {
   body {
-    position: fixed;
+    position: absolute;
+    background-size: cover;
   }
 }
 
