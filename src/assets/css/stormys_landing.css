@@ -18,9 +18,9 @@ body::before {
   opacity: 0.4;
   z-index: -1;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   body {
-    position: absolute;
+    position: relative;
   }
 }
 
