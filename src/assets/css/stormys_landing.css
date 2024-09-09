@@ -989,6 +989,7 @@ body.flip-icon .logo-container .logo {
   .hours-container-footer, .inquiries-container-footer {
     width: 100%;
     text-align: center;
+    justify-content: center;
     margin-bottom: 15px;
   }
   .footer {
