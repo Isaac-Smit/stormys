@@ -481,7 +481,7 @@ body.flip-icon .logo-container .logo {
   .cuts, .prices {
     display: flex;
     align-items: center;
-    font-size: clamp(1rem, 2vw, 1rem); /* Increased font size */
+    font-size: clamp(0.8rem, 1.5vw, 0.8rem); /* Increased font size */
     letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
     padding: 1rem;
   }
