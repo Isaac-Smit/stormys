@@ -497,6 +497,8 @@ body.flip-icon .logo-container .logo {
   }
   .cuts, .prices {
     font-size: clamp(0.5rem, 3vw, 0.75rem); /* Smaller font for smaller screens */
+    padding: 0.5rem;
+    padding-top: 2rem;
   }
   .pricing-section {
     padding: 0.01rem; /* Reduce padding */
@@ -726,7 +728,7 @@ body.flip-icon .logo-container .logo {
   width: 4rem;
   height: 4rem;
   background-color: #F4EDEB;
-  color: #1F232C;
+  color: #333333;
   border: none;
   cursor: pointer;
   border-radius: 50%;
@@ -798,8 +800,10 @@ body.flip-icon .logo-container .logo {
 
 .schedule-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row; /* Stack title and days/hours vertically */
   align-items: flex-start; /* Align everything to the left */
+  justify-content: center;
   width: 100%;
 }
 

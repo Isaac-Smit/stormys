@@ -107,6 +107,8 @@
 
     .cuts, .prices {
         font-size: clamp(0.5rem, 3vw, 0.75rem); /* Smaller font for smaller screens */
+        padding: 0.5rem;
+        padding-top: 2rem;
     }
 
     .pricing-section {
