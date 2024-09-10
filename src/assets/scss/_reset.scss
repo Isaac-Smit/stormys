@@ -4,6 +4,7 @@ body {
     background-color: #1F232C;
     color: #1F232C;
     position: relative;
+    max-width: 100%;
 
     &::before {
         content: "";

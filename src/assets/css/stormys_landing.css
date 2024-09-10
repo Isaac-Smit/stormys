@@ -4,6 +4,7 @@ body {
   background-color: #1F232C;
   color: #1F232C;
   position: relative;
+  max-width: 100%;
 }
 body::before {
   content: "";
@@ -484,7 +485,7 @@ body.flip-icon .logo-container .logo {
     width: 100%; /* Full width for smaller screens */
   }
   .pricing-section {
-    padding: 1rem; /* Reduce padding */
+    padding: 0.5rem; /* Reduce padding */
   }
   .cuts, .prices {
     font-size: clamp(1.2rem, 4vw, 1rem); /* Smaller font for smaller screens */
@@ -504,10 +505,10 @@ body.flip-icon .logo-container .logo {
     margin: 5px;
   }
   .pricing-container {
-    padding: 0.5rem;
+    padding: 0.1rem;
   }
   .pricing-container ul {
-    padding-left: 0.15rem;
+    padding-left: 0.1rem;
   }
 }
 .page-break {
