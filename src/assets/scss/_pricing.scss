@@ -68,7 +68,7 @@
 .cuts, .prices {
     display: flex;
     align-items: center;
-    font-size: clamp(1rem, 2vw, 1rem); /* Increased font size */
+    font-size: clamp(1.5rem, 2vw, 1.5rem); /* Increased font size */
     letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
     padding: 1rem;
 }
@@ -79,6 +79,14 @@
     }
     .cuts, .prices {
         padding: 0.2rem;
+    }
+
+    .cuts, .prices {
+        display: flex;
+        align-items: center;
+        font-size: clamp(1rem, 2vw, 1rem); /* Increased font size */
+        letter-spacing: clamp(0.125rem, 1vw, 0.25rem); /* Adjusted letter-spacing */
+        padding: 1rem;
     }
 }
 
