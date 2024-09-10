@@ -106,7 +106,7 @@
     }
 
     .cuts, .prices {
-        font-size: clamp(0.5rem, 4vw, 0.75rem); /* Smaller font for smaller screens */
+        font-size: clamp(0.5rem, 3vw, 0.75rem); /* Smaller font for smaller screens */
     }
 
     .pricing-section {
@@ -118,9 +118,9 @@
     }
 
     .pricing-container {
-        padding: 0.1rem;
+        padding: 0rem;
         ul {
-            padding-left: 0.1rem;
+            padding-left: 0rem;
         }
     }
 }

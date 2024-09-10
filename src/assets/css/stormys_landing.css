@@ -496,7 +496,7 @@ body.flip-icon .logo-container .logo {
     width: 50%; /* Allow full width on smaller screens */
   }
   .cuts, .prices {
-    font-size: clamp(0.5rem, 4vw, 0.75rem); /* Smaller font for smaller screens */
+    font-size: clamp(0.5rem, 3vw, 0.75rem); /* Smaller font for smaller screens */
   }
   .pricing-section {
     padding: 0.01rem; /* Reduce padding */
@@ -505,10 +505,10 @@ body.flip-icon .logo-container .logo {
     margin: 5px;
   }
   .pricing-container {
-    padding: 0.1rem;
+    padding: 0rem;
   }
   .pricing-container ul {
-    padding-left: 0.1rem;
+    padding-left: 0rem;
   }
 }
 .page-break {
@@ -888,6 +888,7 @@ body.flip-icon .logo-container .logo {
   flex-wrap: wrap;
   flex-direction: column;
   width: 70%;
+  align-content: center;
 }
 
 .email, .address, .appointment-status, .inquire, .phone, .number {
@@ -983,6 +984,9 @@ body.flip-icon .logo-container .logo {
   }
   .hours-title-container, .inquiries-title-container {
     width: 90%;
+  }
+  .days {
+    margin: 0rem;
   }
   .footer-content-container {
     flex-direction: row;

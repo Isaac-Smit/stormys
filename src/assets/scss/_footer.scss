@@ -102,6 +102,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     width: 70%;
+    align-content: center;
 }
 
 .email, .address, .appointment-status, .inquire, .phone, .number {
@@ -199,6 +200,10 @@
 
     .hours-title-container, .inquiries-title-container {
         width: 90%;
+    }
+
+    .days{
+        margin: 0rem;
     }
 
     .footer-content-container {
