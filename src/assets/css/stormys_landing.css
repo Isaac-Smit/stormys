@@ -475,6 +475,9 @@ body.flip-icon .logo-container .logo {
   .pricing-title-container {
     width: 26%; /* Allow full width on smaller screens */
   }
+  .cuts, .prices {
+    padding: 0.5rem;
+  }
 }
 /* Media Query Adjustments for Smaller Screens */
 @media (max-width: 768px) {
